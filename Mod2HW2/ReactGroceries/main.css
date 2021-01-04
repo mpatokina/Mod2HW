@@ -1,0 +1,41 @@
+body {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: left;
+  }
+
+
+
+
+
+.container {
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container > div {
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+.preview {
+    flex-basis: 46%;
+    background: var(--blue-greige);
+    margin-right: .5em;
+}
+.newProduct {
+    flex-basis: 46%;
+    background: var(--blue-greige);
+    margin-right: .5em;
+}
+
+.item, .brand, .unit, .quantity {
+
+flex-basis: 46%;
+    background: var(--blue-greige);
+    margin-right: .5em;
+}
