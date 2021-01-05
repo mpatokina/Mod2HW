@@ -2,9 +2,14 @@ class App extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-        stateGroceryItems: groceryItems    
+      stateGroceryItems: groceryItems    
       }
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+
     }
+    
+
 
     handleChange = (event) => {
         this.setState({ [event.target.id]: event.target.value })
@@ -16,9 +21,9 @@ class App extends React.Component {
         const newItem = {
           item: this.state.item,
           brand: this.state.brand,
-          units: this.state.utits,
+          units: this.state.units,
           quantity: this.state.quantity,
-          isPurchased: this.state.Purchased
+          isPurchased: this.state.isPurchased
         }
         this.setState({
           items: [newItem, ...this.state.items],
@@ -39,7 +44,10 @@ class App extends React.Component {
           <div id="main">
             <h1>React Grocery</h1>
           <div className='newProduct'>
-          <form onSubmit={this.handleSubmit}>
+          <form 
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          >
           <h2>Please add new item to the list</h2>
         <label htmlFor='item'>Item: </label>
         <input type='item' value={this.state.item} onChange={this.handleChange} id='item' />
@@ -87,6 +95,7 @@ class App extends React.Component {
                    { item.isPurchased ? '' : <h5><span> brand: </span> { item.brand } </h5> }
                    { item.isPurchased ? '' : <h5><span> units: </span> { item.units } </h5> }
                    { item.isPurchased ? '' : <h5><span> quantity: </span> { item.quantity } </h5> }
+                   { item.isPurchased ? '' : <h5><span> isPurchased: </span> { item.isPurchased } </h5> }
                    </li>)
                    )
                 }
