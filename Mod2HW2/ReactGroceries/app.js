@@ -26,7 +26,7 @@ class App extends React.Component {
           isPurchased: this.state.isPurchased
         }
         this.setState({
-          items: [newItem, ...this.state.items],
+          stateGroceryItems: [newItem, ...this.state.stateGroceryItems],
           item: '',
           brand: '',
           units: '',
@@ -95,7 +95,7 @@ class App extends React.Component {
                    { item.isPurchased ? '' : <h5><span> brand: </span> { item.brand } </h5> }
                    { item.isPurchased ? '' : <h5><span> units: </span> { item.units } </h5> }
                    { item.isPurchased ? '' : <h5><span> quantity: </span> { item.quantity } </h5> }
-                   { item.isPurchased ? '' : <h5><span> isPurchased: </span> { item.isPurchased } </h5> }
+                   { item.isPurchased ? '' : <h5><span> isPurchased: </span> { item.isPurchased.toString() } </h5> }
                    </li>)
                    )
                 }
