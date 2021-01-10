@@ -83,7 +83,7 @@ class App extends React.Component {
         </ul>
       </div>
             
-                <div>
+                <div className = 'mainList'>
                 <h1>Grocery List</h1>
                 
             <ul>
